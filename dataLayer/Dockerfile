@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.12.0a7-alpine
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -9,6 +9,8 @@ COPY . /app
 
 
 COPY .env.prod /app/.env
+RUN ls
+RUN pwd
 RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8000
