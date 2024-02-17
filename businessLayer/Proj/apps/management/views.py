@@ -134,7 +134,7 @@ def basket_product_add(request, basket_id):
 @decorators.permission_classes([perms.IsAuthenticated])
 def basket_product_detail(request, id):
     gateway = config('DATA_GATEWAY')
-    url = gateway+f'/management/basket-product/{id}'
+    url = gateway+f'/management/basket-product/{id}/'
     res = requests.get(url)
     data = json.loads(res.content)
     request_data = request.data
